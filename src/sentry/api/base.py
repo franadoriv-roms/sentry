@@ -307,7 +307,7 @@ class Endpoint(APIView):
     def respond_with_text(self, text):
         return self.respond({"text": text})
 
-    def get_per_page(self, request: Request, default_per_page=100, max_per_page=100000000):
+    def get_per_page(self, request: Request, default_per_page=100, max_per_page=10000000):
         try:
             per_page = int(request.GET.get("per_page", default_per_page))
         except ValueError:
